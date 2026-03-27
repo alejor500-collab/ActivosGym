@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activos Gym | Despierta tu Energía</title>
+    <meta name="description"
+        content="Únete a Activos Gym. Excelentes planes desde $20, acceso completo, bailoterapia y coaches expertos para principiantes.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div id="cursor-dot" class="cursor-dot"></div>
+    <div id="cursor-ring" class="cursor-ring"></div>
+
+    <!-- Intro Screen -->
+    <div id="intro-screen" class="intro-screen">
+        <canvas id="intro-canvas" class="intro-canvas"></canvas>
+        <div class="intro-content">
+            <div class="intro-logo-wrap">
+                <img src="images/logotipo.png" alt="Activos Gym Logo" class="intro-logo">
+                <div class="intro-logo-glow"></div>
+            </div>
+            <div class="intro-tagline">
+                <span class="intro-word" data-word="Despierta">Despierta</span>
+                <span class="intro-word intro-accent" data-word="tu">tu</span>
+                <span class="intro-word" data-word="Energía">Energía</span>
+            </div>
+            <div class="intro-progress-bar">
+                <div class="intro-progress-fill"></div>
+            </div>
+        </div>
+        <div class="intro-curtain-top"></div>
+        <div class="intro-curtain-bottom"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo"><img src="images/logotipo.png" alt="Activos Gym"></a>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#benefits">Beneficios</a></li>
+                <li><a href="#pricing">Planes</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="hero-particles"></div>
+        <div class="container hero-content">
+            <div class="hero-label animate-up">⚡ Activos Gym — Únete hoy</div>
+            <h1 class="animate-up delay-1">Supera tus <span class="text-shine">Límites</span></h1>
+            <p class="animate-up delay-2">El mejor ambiente para entrenar. Únete hoy a Activos Gym y transforma tu vida
+                con acceso completo, bailoterapia y los mejores coaches.</p>
+            <a href="#pricing" class="btn btn-primary animate-up delay-3 btn-magnetic">
+                <span>Ver Planes</span>
+                <i class="fas fa-arrow-right btn-arrow"></i>
+            </a>
+        </div>
+        <div class="hero-scroll-hint">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="stats" class="stats section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="150">0</h3>
+                    <p>Coaches</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="3500">0</h3>
+                    <p>Clientes</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="24">0</h3>
+                    <p>Horas</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="50">0</h3>
+                    <p>Clases</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits section">
+        <div class="container">
+            <h2 class="section-title reveal">¿Por qué <span>elegirnos?</span></h2>
+            <div class="benefits-grid">
+                <div class="benefit-card reveal">
+                    <div class="card-glow-border"></div>
+                    <div class="icon-wrapper">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Acceso Completo</h3>
+                    <p>Disfruta de todas nuestras áreas de peso libre, máquinas y cardio sin restricciones de horario.
+                    </p>
+                </div>
+                <div class="benefit-card reveal delay-1">
+                    <div class="card-glow-border"></div>
+                    <div class="icon-wrapper">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Bailoterapia</h3>
+                    <p>Clases dinámicas y divertidas de bailoterapia guiadas por expertos para quemar calorías al ritmo
+                        de la música.</p>
+                </div>
+                <div class="benefit-card reveal delay-2">
+                    <div class="card-glow-border"></div>
+                    <div class="icon-wrapper">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Apoyo a Principiantes</h3>
+                    <p>Nuestros coaches están siempre dispuestos a guiarte desde tu primer día para asegurar tu
+                        progreso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing section">
+        <div class="container">
+            <h2 class="section-title reveal">Nuestros <span>Planes</span></h2>
+            <div class="pricing-grid">
+                <div class="pricing-card highlighted reveal">
+                    <div class="pricing-glow"></div>
+                    <div class="popular-badge">Más Elegido</div>
+                    <div class="card-header">
+                        <h3>Estudiantes</h3>
+                        <div class="price"><span>$</span>20<span>/mes</span></div>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Acceso completo al gimnasio</li>
+                            <li><i class="fas fa-check"></i> Sesiones de Bailoterapia</li>
+                            <li><i class="fas fa-check"></i> Asesoría de coaches para principiantes</li>
+                            <li><i class="fas fa-check"></i> Horario libre sin restricciones</li>
+                            <li><i class="fas fa-check"></i> Requiere carnet estudiantil vigente</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary btn-magnetic"><span>Únete Ahora</span></a>
+                    </div>
+                </div>
+                <div class="pricing-card reveal delay-1">
+                    <div class="pricing-glow"></div>
+                    <div class="card-header">
+                        <h3>Normal</h3>
+                        <div class="price"><span>$</span>25<span>/mes</span></div>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Acceso total e ilimitado</li>
+                            <li><i class="fas fa-check"></i> Sesiones Vip de Bailoterapia</li>
+                            <li><i class="fas fa-check"></i> Rutinas personalizadas con coaches</li>
+                            <li><i class="fas fa-check"></i> Horario libre sin restricciones</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline btn-magnetic"><span>Únete Ahora</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="cta section">
+        <div class="cta-overlay"></div>
+        <div class="container cta-content reveal">
+            <h2>¿Listo para empezar tu <span>cambio físico?</span></h2>
+            <p>No dejes para mañana el cuerpo que puedes empezar a construir hoy con Activos Gym.</p>
+            <a href="#contact" class="btn btn-primary btn-lg btn-magnetic"><span>Inscríbete Hoy</span></a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo"><img src="images/logotipo.png" alt="Activos Gym"></a>
+                <p>Tu mejor versión empieza aquí. Únete a la comunidad de fitness con más actitud y energía.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Av. 11 de Noviembre y Juan Salinas, Riobamba</p>
+                <p><i class="fas fa-phone"></i> 099 984 2535</p>
+                <p><i class="fas fa-envelope"></i> info@activosgym.com</p>
+            </div>
+            <div class="footer-schedule">
+                <h3>Horario</h3>
+                <p><span>Lunes a Viernes:</span> 5:30 a.m. – 11 p.m.</p>
+                <p><span>Sábado:</span>8 a.m. – 2 p.m.</p>
+                <p><span>Domingo:</span> Cerrado</p>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/Fulladictiongym/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/activosgymrbb/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@activosgimansio" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Activos Gym. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
