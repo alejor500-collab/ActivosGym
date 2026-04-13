@@ -138,6 +138,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.classList.add('active');
             }, i * 130);
         });
+
+        const navItems = document.querySelectorAll('.nav-item-anim');
+        navItems.forEach((el, i) => {
+            setTimeout(() => {
+                el.classList.add('active');
+            }, 300 + (i * 100)); // Sutil cascada en el menú
+        });
+
         spawnHeroParticles();
     }
 
@@ -211,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('reveal', `delay-${index % 3}`);
     });
 
-    const revealEls = document.querySelectorAll('.animate-up, .reveal');
+    const revealEls = document.querySelectorAll('.reveal');
 
     const revealObserver = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {

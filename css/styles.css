@@ -75,6 +75,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     background: var(--color-bg);
     z-index: 9999;
     display: flex;
@@ -275,7 +276,7 @@ body {
     position: absolute;
     left: 0;
     width: 100%;
-    height: 50%;
+    height: 51%;
     background: var(--color-bg);
     z-index: 3;
     transform: translateY(0);
@@ -313,24 +314,42 @@ body {
    ===================== */
 .reveal {
     opacity: 0;
-    transform: translateY(50px) scale(0.98);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(60px) scale(0.95);
+    filter: blur(8px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0) scale(1);
+    filter: blur(0);
 }
 
 .animate-up {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(70px) scale(0.92) rotateX(-10deg);
+    transform-origin: bottom center;
+    filter: blur(14px);
+    transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.3s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 1.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .animate-up.active {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0);
+    filter: blur(0);
+}
+
+.nav-item-anim {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-item-anim.active {
     opacity: 1;
     transform: translateY(0);
 }
@@ -944,7 +963,7 @@ nav.scrolled {
     opacity: 1;
 }
 
-.pricing-card > *:not(.pricing-glow) {
+.pricing-card>*:not(.pricing-glow) {
     position: relative;
     z-index: 1;
 }
@@ -967,17 +986,17 @@ nav.scrolled {
 .pricing-card.highlighted {
     background: var(--color-bg-alt);
     border-color: rgba(16, 185, 129, 0.3);
-    box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.15), 0 8px 32px rgba(0,0,0,0.3);
+    box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .pricing-card.highlighted:hover {
     background: linear-gradient(180deg, #16181d 0%, rgba(16, 185, 129, 0.06) 100%);
     border-color: rgba(16, 185, 129, 0.7);
-    box-shadow: 
+    box-shadow:
         0 0 0 1px rgba(16, 185, 129, 0.5),
-        0 20px 60px rgba(0, 0, 0, 0.6), 
+        0 20px 60px rgba(0, 0, 0, 0.6),
         0 0 80px rgba(16, 185, 129, 0.25),
-        inset 0 1px 0 rgba(255,255,255,0.06);
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
     transform: translateY(-14px) scale(1.01);
 }
 
@@ -988,11 +1007,11 @@ nav.scrolled {
     inset: -1px;
     border-radius: 20px;
     padding: 1px;
-    background: conic-gradient(from 0deg at 50% 50%, 
-                transparent 0%, 
-                transparent 75%, 
-                var(--color-primary) 90%,
-                #6ee7b7 100%);
+    background: conic-gradient(from 0deg at 50% 50%,
+            transparent 0%,
+            transparent 75%,
+            var(--color-primary) 90%,
+            #6ee7b7 100%);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
@@ -1009,8 +1028,13 @@ nav.scrolled {
 }
 
 @keyframes rotateBeam {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* =====================
@@ -1036,7 +1060,7 @@ nav.scrolled {
     border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow:
         0 4px 20px rgba(16, 185, 129, 0.55),
-        0 1px 0 rgba(255,255,255,0.2) inset;
+        0 1px 0 rgba(255, 255, 255, 0.2) inset;
     backdrop-filter: blur(8px);
     z-index: 10;
     animation: badgePulse 2.8s ease-in-out infinite;
@@ -1058,24 +1082,32 @@ nav.scrolled {
     position: absolute;
     inset: 0;
     border-radius: 30px;
-    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.28) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.28) 50%, transparent 100%);
     background-size: 200% 100%;
     animation: shimmerBadge 2.5s ease-in-out infinite;
     pointer-events: none;
 }
 
 @keyframes shimmerBadge {
-    0%   { background-position: -200% center; }
-    100% { background-position:  200% center; }
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
 }
 
 @keyframes badgePulse {
-    0%, 100% {
-        box-shadow: 0 4px 20px rgba(16, 185, 129, 0.55), 0 1px 0 rgba(255,255,255,0.2) inset;
+
+    0%,
+    100% {
+        box-shadow: 0 4px 20px rgba(16, 185, 129, 0.55), 0 1px 0 rgba(255, 255, 255, 0.2) inset;
         transform: translateX(-50%) scale(1);
     }
+
     50% {
-        box-shadow: 0 6px 30px rgba(16, 185, 129, 0.85), 0 1px 0 rgba(255,255,255,0.2) inset;
+        box-shadow: 0 6px 30px rgba(16, 185, 129, 0.85), 0 1px 0 rgba(255, 255, 255, 0.2) inset;
         transform: translateX(-50%) scale(1.04);
     }
 }
@@ -1319,6 +1351,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .logo img {
+        width: 140px;
+    }
+
     .nav-links {
         position: absolute;
         top: 100%;
@@ -1350,7 +1386,7 @@ footer {
     }
 
     .section {
-        padding: 80px 0;
+        padding: 60px 0;
     }
 
     .cta h2 {
@@ -1359,6 +1395,26 @@ footer {
 
     .price {
         font-size: 3rem;
+    }
+
+    /* Fixed Layouts for Grid and Paddings */
+    .pricing-grid,
+    .benefits-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .pricing-card {
+        padding: 40px 25px;
+    }
+
+    .benefit-card {
+        padding: 40px 25px;
+    }
+
+    .stat-item h3 {
+        font-size: 2.3rem;
     }
 
     .footer-content {
@@ -1409,4 +1465,22 @@ footer {
 
 .schedule-row span:last-child {
     color: var(--color-text-muted);
+}
+
+.footer-schedule {
+    font-family: Arial, sans-serif;
+}
+
+.footer-schedule h3 {
+    margin-bottom: 10px;
+}
+
+.footer-schedule p {
+    display: grid;
+    grid-template-columns: 150px auto;
+    margin: 5px 0;
+}
+
+.footer-schedule span {
+    font-weight: bold;
 }
