@@ -21,6 +21,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -1351,6 +1352,28 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* Fix background-attachment: fixed on Android (not supported, causes redraws) */
+    .hero {
+        background-attachment: scroll;
+    }
+
+    .cta {
+        background-attachment: scroll;
+    }
+
+    /* Simplify blur animations to avoid layout shifts on mobile */
+    .reveal {
+        filter: none;
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+            transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .animate-up {
+        filter: none;
+        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+            transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
     .logo img {
         width: 140px;
     }
